@@ -24,7 +24,8 @@
 **Using math.h**
 
 - double ctg(double x)
-- [!] float random(float min, float max)
+- float random(double min, double max)
+- int random(int min, int max)
 
 ### Graphics
 

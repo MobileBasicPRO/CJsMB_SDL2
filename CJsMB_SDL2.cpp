@@ -9,6 +9,8 @@
 #pragma once
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 int Main();
 bool Loop();
@@ -109,9 +111,12 @@ double ctg(double x) {
     return 1 / tan(x);
 }
 
-float random(float min, float max) {
-    // TODO:
-    return (min + max) / 2;
+float random(double min, double max) {
+    return (float)(rand() % ((int) max * 100 + 1)) / 100 + min;
+}
+
+int random(int min, int max) {
+    return (rand() % (max - min)) + min;
 }
 
 // Graphics
@@ -201,6 +206,8 @@ int $Main() {
     } else if($JsMobileBasic.DEBUG) {
         std::cout << "Initialize SDL - OK!" << std::endl;
     }
+
+    srand(time(0));
 
     int mainres = Main();
     if(mainres != 0) return mainres;

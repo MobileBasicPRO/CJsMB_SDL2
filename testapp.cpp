@@ -16,6 +16,16 @@ int Main() {
     drawRect(5, 5, 25, 25);
     repaint();
 
+    cout << "Test of float random generation" << endl;
+    for(char i = 0; i < 50; i++)
+        cout << random(0.0, 10.4) << "\t";
+    cout << endl;
+
+    cout << "Test of int random generation" << endl;
+    for(char i = 0; i < 50; i++)
+        cout << random(0, 10) << "\t";
+    cout << endl;
+
     delay(5000);
 
     return 0;
