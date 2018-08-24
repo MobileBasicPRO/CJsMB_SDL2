@@ -1,3 +1,11 @@
+/** 
+     * JsMobileBasic API implementation
+     * Copyright (c) PROPHESSOR 2018
+
+     * This software is released under the MIT License.
+     * https://opensource.org/licenses/MIT
+*/
+
 #pragma once
 
 #include <iostream>
@@ -8,8 +16,6 @@ bool Loop();
 namespace JsMB {
 #include <math.h>
 #include "SDL2/SDL.h"
-//#include "SDL2_image.h"
-//#include "SDL2_mixer.h"
 
 typedef struct {
     unsigned int     width          ;
@@ -113,7 +119,7 @@ bool setBgColor(unsigned char red, unsigned char green, unsigned char blue) {
     $JsMobileBasic.bgcolor[1] = green;
     $JsMobileBasic.bgcolor[2] = blue;
 
-    return true;
+    return false;
 }
 
 bool cls() {
