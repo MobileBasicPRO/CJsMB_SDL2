@@ -11,6 +11,7 @@ int Main() {
     cout << ctg(2) << endl;
 
     cls();
+    fillScreen(0, 0, 255);
     setColor(255, 0, 0);
     drawRect(5, 5, 25, 25);
     repaint();

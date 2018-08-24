@@ -14,7 +14,12 @@
 - bool createWindow(const char \*title, uint16 width, uint16 height) => true
 - void delay(int32 ms)
 
-### Matg
+### Get
+
+- uint16 screenWidth()
+- uint16 screenHeight()
+
+### Math
 
 **Using math.h**
 
@@ -32,3 +37,4 @@
 
 - bool drawRect(int16 x, int16 y, int16 width, int16 height) => true
 - bool fillRect(int16 x, int16 y, int16 width, int16 height) => true
+- bool fillScreen(uint8 red, uint8 green, uint8 blue) => true

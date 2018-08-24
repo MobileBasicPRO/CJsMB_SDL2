@@ -36,6 +36,8 @@ typedef struct {
 
 $_JsMB_t $JsMobileBasic;
 
+// TODO: Header file
+
 // SDL
 
 bool createWindow(const char *title, unsigned short width, unsigned short height) {
@@ -74,6 +76,16 @@ bool createWindow(const char *title, unsigned short width, unsigned short height
 
 void delay(int ms) {
     SDL_Delay(ms);
+}
+
+// Get
+
+unsigned short screenWidth() {
+    return $JsMobileBasic.window->width;
+}
+
+unsigned short screenHeight() {
+    return $JsMobileBasic.window->height;
 }
 
 // Math
@@ -155,6 +167,19 @@ bool fillRect(short x, short y, short width, short height) {
 
     SDL_RenderDrawRect($JsMobileBasic.window->sdl_renderer, &rect);
     SDL_RenderFillRect($JsMobileBasic.window->sdl_renderer, &rect);
+
+    return true;
+}
+
+bool fillScreen(unsigned char red, unsigned char green, unsigned char blue) {
+    unsigned char tmpcolor[3];
+    tmpcolor[0] = $JsMobileBasic.color[0];
+    tmpcolor[1] = $JsMobileBasic.color[1];
+    tmpcolor[2] = $JsMobileBasic.color[2];
+
+    setColor(red, green, blue);
+    fillRect(0, 0, screenWidth(), screenHeight());
+    setColor(tmpcolor[0], tmpcolor[1], tmpcolor[2]);
 
     return true;
 }
