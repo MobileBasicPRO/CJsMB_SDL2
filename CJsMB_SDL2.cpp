@@ -140,7 +140,14 @@ bool setBgColor(unsigned char red, unsigned char green, unsigned char blue) {
 }
 
 bool cls() {
+    unsigned char tmpcolor[3];
+    tmpcolor[0] = $JsMobileBasic.color[0];
+    tmpcolor[1] = $JsMobileBasic.color[1];
+    tmpcolor[2] = $JsMobileBasic.color[2];
+
+    setColor(0x0, 0x0, 0x0);
     SDL_RenderClear($JsMobileBasic.window->sdl_renderer);
+    setColor(tmpcolor[0], tmpcolor[1], tmpcolor[2]);
     return true;
 }
 
@@ -185,6 +192,12 @@ bool fillScreen(unsigned char red, unsigned char green, unsigned char blue) {
     setColor(red, green, blue);
     fillRect(0, 0, screenWidth(), screenHeight());
     setColor(tmpcolor[0], tmpcolor[1], tmpcolor[2]);
+
+    return true;
+}
+
+bool drawLine(short x1, short y1, short x2, short y2) {
+    SDL_RenderDrawLine($JsMobileBasic.window->sdl_renderer, x1, y1, x2, y2);
 
     return true;
 }
